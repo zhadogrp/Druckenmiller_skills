@@ -26,11 +26,22 @@ WEIGHTS = {
     "yield_curve":         0.15,
 }
 
-def fetch_series(fred: Fred, series_id: str, periods: int = 24) -> pd.Series:
+def fetch_series(fred, series_id: str, periods: int = 24) -> pd.Series:
     end = datetime.today()
     start = end - timedelta(days=periods * 35)
-    data = fred.get_series(series_id, start, end)
-    return data.dropna()
+    if fred is not None:
+        data = fred.get_series(series_id, start, end)
+        return data.dropna()
+    # Keyless fallback: FRED public CSV endpoint (no API key required)
+    import io, requests
+    url = f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={series_id}&cosd={start:%Y-%m-%d}&coed={end:%Y-%m-%d}"
+    r = requests.get(url, timeout=60)
+    r.raise_for_status()
+    df = pd.read_csv(io.StringIO(r.text))
+    df.columns = ["date", "value"]
+    s = pd.to_numeric(df["value"], errors="coerce")
+    s.index = pd.to_datetime(df["date"])
+    return s.dropna()
 
 def score_balance_sheet(series: pd.Series) -> tuple[float, str]:
     """3-month trend of Fed balance sheet. Expanding = bullish."""
@@ -153,7 +164,10 @@ def main():
     args = parser.parse_args()
 
     os.makedirs(args.output_dir, exist_ok=True)
-    fred = Fred(api_key=os.getenv("FRED_API_KEY"))
+    key = os.getenv("FRED_API_KEY")
+    fred = Fred(api_key=key) if key and key != "your_fred_api_key_here" else None
+    if fred is None:
+        print("FRED_API_KEY not set - using keyless FRED CSV endpoint")
     date = datetime.today().strftime("%Y-%m-%d")
 
     print("Fetching FRED data...")

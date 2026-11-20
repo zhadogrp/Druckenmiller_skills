@@ -1,69 +1,59 @@
 name: Daily Conviction Pipeline
 
+# Runs after US market close on weekdays (21:30 UTC = 16:30 ET in winter /
+# 17:30 ET in summer = 05:30 HKT next morning), then deploys the dashboard and
+# reports to GitHub Pages. Report dates use the US trading date (America/New_York).
 on:
-  workflow_dispatch:   # 只保留手動觸發（yfinance 在 GitHub Actions IP 被封鎖）
+  schedule:
+    - cron: '30 21 * * 1-5'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['src/**', 'index.html', 'vite.config.js', 'package.json']
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  TZ: America/New_York
 
 jobs:
-  run-pipeline:
+  pipeline:
+    if: github.event_name != 'push'
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
+      - run: pip install -r requirements.txt
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
+      # FRED_API_KEY is optional: without it the script uses FRED's keyless CSV endpoint.
       - name: Run liquidity-regime
-        env:
-          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
-          FMP_API_KEY:  ${{ secrets.FMP_API_KEY }}
+        continue-on-error: true
+        env: { FRED_API_KEY: '${{ secrets.FRED_API_KEY }}' }
         run: python liquidity-regime/scripts/liquidity_regime.py --output-dir public/reports/
-
-      - name: Wait (rate limit buffer)
-        run: sleep 45
-
       - name: Run forward-earnings
-        env:
-          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
-          FMP_API_KEY:  ${{ secrets.FMP_API_KEY }}
-        run: python forward-earnings/scripts/forward_earnings.py --output-dir public/reports/
-
-      - name: Wait (rate limit buffer)
-        run: sleep 45
-
+        continue-on-error: true
+        run: sleep 20 && python forward-earnings/scripts/forward_earnings.py --output-dir public/reports/
       - name: Run market-breadth
-        env:
-          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
-          FMP_API_KEY:  ${{ secrets.FMP_API_KEY }}
-        run: python market-breadth/scripts/market_breadth.py --output-dir public/reports/
-
-      - name: Wait (rate limit buffer)
-        run: sleep 45
-
+        continue-on-error: true
+        run: sleep 20 && python market-breadth/scripts/market_breadth.py --output-dir public/reports/
       - name: Run price-signal
-        env:
-          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
-          FMP_API_KEY:  ${{ secrets.FMP_API_KEY }}
-        run: python price-signal/scripts/price_signal.py --output-dir public/reports/
-
-      - name: Wait (rate limit buffer)
-        run: sleep 15
-
+        continue-on-error: true
+        run: sleep 20 && python price-signal/scripts/price_signal.py --output-dir public/reports/
       - name: Run conviction-synthesizer
-        env:
-          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
-          FMP_API_KEY:  ${{ secrets.FMP_API_KEY }}
         run: |
           python conviction-synthesizer/scripts/conviction_synthesizer.py \
             --reports-dir public/reports/ --output-dir public/reports/
-
+          cp "public/reports/conviction_$(date +%Y-%m-%d).json" public/reports/conviction_latest.json
       - name: Commit & push reports
         run: |
           git config user.name  "github-actions[bot]"
@@ -71,3 +61,23 @@ jobs:
           git add public/reports/
           git diff --cached --quiet || git commit -m "chore: daily conviction report $(date +%Y-%m-%d)"
           git push
+
+  deploy:
+    needs: pipeline
+    if: always() && (needs.pipeline.result == 'success' || needs.pipeline.result == 'skipped')
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci && npm run build
+      - run: touch dist/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: dist }
+      - id: deployment
+        uses: actions/deploy-pages@v4

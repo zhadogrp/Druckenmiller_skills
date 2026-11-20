@@ -26,7 +26,7 @@ Druckenmiller 今天怎麼看？
 現在該持多少倉位？
 ```
 
-Skill 會自動從 `https://druckenmiller-skills.vercel.app` 抓取數據。
+Skill 會自動從 `https://zhadogrp.github.io/Druckenmiller_skills` 抓取數據。
 
 > 數據由維護者每個工作日更新。若今日報告尚未生成，Skill 會告知你。
 
@@ -64,7 +64,7 @@ Fork 此 repo，建立自己的數據 pipeline，完全掌控數據更新頻率�
 
 在 `skills/druckenmiller/SKILL.md` 中，將：
 ```
-https://druckenmiller-skills.vercel.app
+https://zhadogrp.github.io/Druckenmiller_skills
 ```
 替換為你自己的 Vercel 部署網址。
 

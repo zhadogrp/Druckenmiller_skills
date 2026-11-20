@@ -19,10 +19,10 @@ If the user asks a question outside the conviction data (e.g. "should I buy X st
 Compute today's date (YYYY-MM-DD) and fetch:
 
 ```
-https://druckenmiller-skills.vercel.app/reports/conviction_YYYY-MM-DD.json
+https://zhadogrp.github.io/Druckenmiller_skills/reports/conviction_YYYY-MM-DD.json
 ```
 
-> **Self-hosted?** Replace `https://druckenmiller-skills.vercel.app` with your own deployment URL.
+> **Self-hosted?** Replace `https://zhadogrp.github.io/Druckenmiller_skills` with your own deployment URL.
 
 If fetch fails: tell the user "今日數據尚未生成，pipeline 可能尚未執行。"
 

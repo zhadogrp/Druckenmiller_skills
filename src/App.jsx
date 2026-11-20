@@ -68,13 +68,13 @@ function CopyBlock({ value }) {
 
 // ── SkillModal ─────────────────────────────────────────────────────────────────
 
-const GITHUB_REPO  = 'a0981456759/Druckenmiller_skills'
+const GITHUB_REPO  = 'zhadogrp/Druckenmiller_skills'
 const PLUGIN_NAME  = 'druckenmiller'
 const MARKET_NAME  = 'druckenmiller-skill'
 
 function SkillModal({ onClose }) {
   const date    = todayStr()
-  const jsonUrl = `${window.location.origin}/reports/conviction_${date}.json`
+  const jsonUrl = new URL(`reports/conviction_${date}.json`, window.location.href).href
 
   const handleBackdrop = useCallback(e => {
     if (e.target === e.currentTarget) onClose()
@@ -189,8 +189,9 @@ export default function App() {
 
   useEffect(() => {
     const date = todayStr()
-    fetch(`/reports/conviction_${date}.json`)
-      .then(r => { if (!r.ok) throw new Error(); return r.json() })
+    const get = url => fetch(url, { cache: 'no-store' }).then(r => { if (!r.ok) throw new Error(); return r.json() })
+    get(`reports/conviction_${date}.json`)
+      .catch(() => get('reports/conviction_latest.json'))
       .then(setData)
       .catch(() => setError(true))
   }, [])

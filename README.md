@@ -26,7 +26,7 @@ Druckenmiller 今天怎麼看？
 現在該持多少倉位？
 ```
 
-That's it. The skill fetches from `https://druckenmiller-skills.vercel.app` automatically.
+That's it. The skill fetches from `https://zhadogrp.github.io/Druckenmiller_skills` automatically.
 
 > Data is updated once per weekday via the pipeline. If today's report isn't ready yet, the skill will tell you.
 
@@ -64,7 +64,7 @@ Connect your forked repo to Vercel. The `public/` folder is the static site root
 
 In `skills/druckenmiller/SKILL.md`, replace:
 ```
-https://druckenmiller-skills.vercel.app
+https://zhadogrp.github.io/Druckenmiller_skills
 ```
 with your own Vercel deployment URL.
 
