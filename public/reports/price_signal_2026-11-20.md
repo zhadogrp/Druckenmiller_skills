@@ -1,7 +1,7 @@
 # Price Signal Analysis -- 2026-11-20
 
 **Overall**: `NEUTRAL`
-**Score**: 54.8 / 100
+**Score**: 50.0 / 100
 
 ## Implication
 Mixed price signals. Some stocks acting well, others lagging. No clear divergence pattern. Treat as neutral input to synthesizer. Note: Druckenmiller acknowledged algo trading has reduced reliability of this signal in recent years.
@@ -9,16 +9,11 @@ Mixed price signals. Some stocks acting well, others lagging. No clear divergenc
 ## Sector Signals
 | Sector | Score | Direction | Bullish | Bearish |
 |--------|-------|-----------|---------|---------|
-| Technology | 66.0 | bullish | 3 | 1 |
-| Financials | 26.0 | bearish | 0 | 3 |
-| Healthcare | 50.0 | neutral | 2 | 2 |
-| Energy | 58.0 | neutral | 2 | 1 |
-| Industrials | 74.0 | bullish | 3 | 0 |
-
-## Notable Divergences (watch carefully)
-
-- LLY: beat earnings by 10.5% but stock reacted -7.2% -- warning signal
-- AMGN: beat earnings by 14.0% but stock reacted -3.0% -- warning signal
+| Technology | 50.0 | neutral | 0 | 0 |
+| Financials | 50.0 | neutral | 0 | 0 |
+| Healthcare | 50.0 | neutral | 0 | 0 |
+| Energy | 50.0 | neutral | 0 | 0 |
+| Industrials | 50.0 | neutral | 0 | 0 |
 
 ## Important Caveat
 > Druckenmiller noted in 2018 that algo trading has 'severely inhibited' his ability to read price signals. This skill is weighted at 15% in the synthesizer, lower than the other three, for this reason.

@@ -2,42 +2,39 @@
   "skill": "price-signal",
   "version": "1.0.0",
   "date": "2026-11-20",
-  "overall_score": 54.8,
+  "overall_score": 50.0,
   "overall_direction": "neutral",
   "implication": "Mixed price signals. Some stocks acting well, others lagging. No clear divergence pattern. Treat as neutral input to synthesizer. Note: Druckenmiller acknowledged algo trading has reduced reliability of this signal in recent years.",
-  "notable_divergences": [
-    "LLY: beat earnings by 10.5% but stock reacted -7.2% -- warning signal",
-    "AMGN: beat earnings by 14.0% but stock reacted -3.0% -- warning signal"
-  ],
+  "notable_divergences": [],
   "sector_results": {
     "Technology": {
-      "score": 66.0,
-      "direction": "bullish",
-      "bullish": 3,
-      "bearish": 1
+      "score": 50.0,
+      "direction": "neutral",
+      "bullish": 0,
+      "bearish": 0
     },
     "Financials": {
-      "score": 26.0,
-      "direction": "bearish",
+      "score": 50.0,
+      "direction": "neutral",
       "bullish": 0,
-      "bearish": 3
+      "bearish": 0
     },
     "Healthcare": {
       "score": 50.0,
       "direction": "neutral",
-      "bullish": 2,
-      "bearish": 2
+      "bullish": 0,
+      "bearish": 0
     },
     "Energy": {
-      "score": 58.0,
+      "score": 50.0,
       "direction": "neutral",
-      "bullish": 2,
-      "bearish": 1
+      "bullish": 0,
+      "bearish": 0
     },
     "Industrials": {
-      "score": 74.0,
-      "direction": "bullish",
-      "bullish": 3,
+      "score": 50.0,
+      "direction": "neutral",
+      "bullish": 0,
       "bearish": 0
     }
   },
