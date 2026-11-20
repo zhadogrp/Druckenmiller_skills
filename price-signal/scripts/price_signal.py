@@ -53,6 +53,54 @@ def fetch_price_data(ticker: str, days: int = LOOKBACK_DAYS + 10) -> pd.DataFram
         return pd.DataFrame()
 
 
+def _close_series(df: pd.DataFrame) -> pd.Series:
+    c = df["Close"]
+    if isinstance(c, pd.DataFrame):
+        c = c.iloc[:, 0]
+    return c.dropna()
+
+
+def _latest_earnings_event(t, ticker: str):
+    """Return (release_date, surprise_pct) for the most recent reported quarter.
+
+    1) Try Yahoo earnings_dates (exact release date + surprise).
+    2) Fallback: earnings_history (quarter end + surprise) and infer the release
+       day as the highest-volume session 7-75 days after quarter end.
+    """
+    now = pd.Timestamp.now(tz="UTC")
+    try:
+        hist = t.get_earnings_dates(limit=8)
+    except Exception:
+        hist = None
+    if hist is not None and not hist.empty:
+        past = hist[hist.index < now].sort_index(ascending=False)
+        if not past.empty:
+            sur = past.iloc[0].get("Surprise(%)", None)
+            return past.index[0].tz_localize(None) if past.index[0].tzinfo else past.index[0], sur, "earnings_dates"
+
+    eh = t.get_earnings_history()
+    if eh is None or eh.empty:
+        return None, None, None
+    eh = eh.dropna(subset=["epsActual"]).sort_index()
+    if eh.empty:
+        return None, None, None
+    q_end = pd.Timestamp(eh.index[-1])
+    sur   = eh.iloc[-1].get("surprisePercent", None)
+    sur   = float(sur) * 100 if sur is not None and not pd.isna(sur) else None
+    px = yf.download(ticker, start=q_end + timedelta(days=7),
+                     end=min(q_end + timedelta(days=76), pd.Timestamp.today() + timedelta(days=1)),
+                     progress=False, auto_adjust=True)
+    if px is None or px.empty:
+        return None, sur, None
+    vol = px["Volume"]
+    if isinstance(vol, pd.DataFrame):
+        vol = vol.iloc[:, 0]
+    release = vol.idxmax()
+    # Earnings after the close: the volume spike is the next session, which is
+    # what we want as the reaction day; use the prior session as the base.
+    return pd.Timestamp(release) - timedelta(days=1), sur, "earnings_history+volume"
+
+
 def get_earnings_reaction(ticker: str) -> dict:
     """
     Check the most recent earnings release:
@@ -60,39 +108,28 @@ def get_earnings_reaction(ticker: str) -> dict:
     Positive surprise but stock falls = bearish price signal (Druck's key tell).
     """
     try:
-        t    = yf.Ticker(ticker)
-        hist = t.earnings_dates
-
-        if hist is None or hist.empty:
+        t = yf.Ticker(ticker)
+        latest_date, surprise, src = _latest_earnings_event(t, ticker)
+        if latest_date is None:
+            print(f"    Warning (earnings): {ticker} -- no earnings data")
             return {"signal": "neutral", "reaction_pct": 0.0, "has_data": False}
 
-        # Find most recent past earnings date
-        now  = pd.Timestamp.now(tz="UTC")
-        past = hist[hist.index < now]
-        if past.empty:
+        # Price window: last close before the event -> 3 sessions after
+        prices = yf.download(ticker, start=latest_date - timedelta(days=6),
+                             end=latest_date + timedelta(days=8),
+                             progress=False, auto_adjust=True)
+        if prices is None or prices.empty:
+            print(f"    Warning (earnings): {ticker} -- no price data around earnings")
             return {"signal": "neutral", "reaction_pct": 0.0, "has_data": False}
-
-        latest_date = past.index[0]
-        surprise    = past.iloc[0].get("Surprise(%)", None)
-
-        # Get price data around earnings
-        earn_start = latest_date - timedelta(days=2)
-        earn_end   = latest_date + timedelta(days=5)
-        prices     = yf.download(ticker, start=earn_start, end=earn_end,
-                                  progress=False, auto_adjust=True)
-
-        if prices.empty or len(prices) < 3:
+        c = _close_series(prices)
+        before = c[c.index <= latest_date]
+        after  = c[c.index > latest_date]
+        if before.empty or after.empty:
             return {"signal": "neutral", "reaction_pct": 0.0, "has_data": False}
+        base = float(before.iloc[-1])
+        last = float(after.iloc[min(2, len(after) - 1)])
+        reaction_pct = (last - base) / base * 100
 
-        # 3-day post-earnings return
-        def _scalar(v):
-            return float(v.iloc[0]) if hasattr(v, 'iloc') else float(v)
-        reaction_pct = (_scalar(prices["Close"].iloc[-1]) - _scalar(prices["Close"].iloc[0])) \
-                    / _scalar(prices["Close"].iloc[0]) * 100
-
-        # Classify signal
-        # Good earnings + bad price = bearish (Druckenmiller's warning signal)
-        # Bad earnings + good price = bullish (market already priced it in)
         if surprise is not None and not pd.isna(surprise):
             if surprise > 5 and reaction_pct < -2:
                 signal = "bearish"   # beat estimates but stock sold off
@@ -108,11 +145,12 @@ def get_earnings_reaction(ticker: str) -> dict:
             signal = "bullish" if reaction_pct > 2 else "bearish" if reaction_pct < -2 else "neutral"
 
         return {
-            "signal":       signal,
-            "reaction_pct": round(reaction_pct, 2),
-            "surprise_pct": round(float(surprise), 2) if surprise and not pd.isna(surprise) else None,
-            "has_data":     True,
-            "earnings_date": str(latest_date.date()),
+            "signal":        signal,
+            "reaction_pct":  round(reaction_pct, 2),
+            "surprise_pct":  round(float(surprise), 2) if surprise is not None and not pd.isna(surprise) else None,
+            "has_data":      True,
+            "earnings_date": str(pd.Timestamp(latest_date).date()),
+            "date_source":   src,
         }
 
     except Exception as e:

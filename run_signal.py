@@ -12,7 +12,7 @@ Usage: python run_signal.py <script.py> <report_prefix> --output-dir DIR
 import argparse, glob, os, re, subprocess, sys, time
 from datetime import datetime
 
-ERR = re.compile(r"RateLimit|Too Many Requests|Failed download|YFPricesMissing|possibly delisted|No data found|\[WARN\]|Error", re.I)
+ERR = re.compile(r"RateLimit|Too Many Requests|Failed download|YFPricesMissing|possibly delisted|No data found|\[WARN\]|^\s*Warning|Error", re.I)
 
 ap = argparse.ArgumentParser()
 ap.add_argument("script")
