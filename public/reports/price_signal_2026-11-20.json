@@ -2,40 +2,45 @@
   "skill": "price-signal",
   "version": "1.0.0",
   "date": "2026-11-20",
-  "overall_score": 53.2,
+  "overall_score": 50.0,
   "overall_direction": "neutral",
   "implication": "Mixed price signals. Some stocks acting well, others lagging. No clear divergence pattern. Treat as neutral input to synthesizer. Note: Druckenmiller acknowledged algo trading has reduced reliability of this signal in recent years.",
-  "notable_divergences": [],
+  "notable_divergences": [
+    "NVDA: beat earnings by 8.4% but stock reacted -6.5% -- warning signal",
+    "AMD: beat earnings by 7.4% but stock reacted -3.8% -- warning signal",
+    "COP: beat earnings by 7.3% but stock reacted -6.9% -- warning signal",
+    "GE: beat earnings by 11.4% but stock reacted -8.2% -- warning signal"
+  ],
   "sector_results": {
     "Technology": {
-      "score": 74.0,
-      "direction": "bullish",
-      "bullish": 4,
+      "score": 50.0,
+      "direction": "neutral",
+      "bullish": 1,
       "bearish": 1
     },
     "Financials": {
-      "score": 18.0,
+      "score": 26.0,
       "direction": "bearish",
-      "bullish": 0,
+      "bullish": 1,
       "bearish": 4
     },
     "Healthcare": {
-      "score": 66.0,
+      "score": 74.0,
       "direction": "bullish",
       "bullish": 3,
-      "bearish": 1
+      "bearish": 0
     },
     "Energy": {
       "score": 50.0,
       "direction": "neutral",
-      "bullish": 2,
-      "bearish": 2
+      "bullish": 1,
+      "bearish": 1
     },
     "Industrials": {
-      "score": 58.0,
+      "score": 50.0,
       "direction": "neutral",
       "bullish": 2,
-      "bearish": 1
+      "bearish": 2
     }
   },
   "caveat": "Druckenmiller noted in 2018 that algo trading has 'severely inhibited' his ability to read price signals. This skill is weighted at 15% in the synthesizer, lower than the other three, for this reason.",

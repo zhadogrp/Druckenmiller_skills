@@ -1,7 +1,7 @@
 # Price Signal Analysis -- 2026-11-20
 
 **Overall**: `NEUTRAL`
-**Score**: 53.2 / 100
+**Score**: 50.0 / 100
 
 ## Implication
 Mixed price signals. Some stocks acting well, others lagging. No clear divergence pattern. Treat as neutral input to synthesizer. Note: Druckenmiller acknowledged algo trading has reduced reliability of this signal in recent years.
@@ -9,11 +9,18 @@ Mixed price signals. Some stocks acting well, others lagging. No clear divergenc
 ## Sector Signals
 | Sector | Score | Direction | Bullish | Bearish |
 |--------|-------|-----------|---------|---------|
-| Technology | 74.0 | bullish | 4 | 1 |
-| Financials | 18.0 | bearish | 0 | 4 |
-| Healthcare | 66.0 | bullish | 3 | 1 |
-| Energy | 50.0 | neutral | 2 | 2 |
-| Industrials | 58.0 | neutral | 2 | 1 |
+| Technology | 50.0 | neutral | 1 | 1 |
+| Financials | 26.0 | bearish | 1 | 4 |
+| Healthcare | 74.0 | bullish | 3 | 0 |
+| Energy | 50.0 | neutral | 1 | 1 |
+| Industrials | 50.0 | neutral | 2 | 2 |
+
+## Notable Divergences (watch carefully)
+
+- NVDA: beat earnings by 8.4% but stock reacted -6.5% -- warning signal
+- AMD: beat earnings by 7.4% but stock reacted -3.8% -- warning signal
+- COP: beat earnings by 7.3% but stock reacted -6.9% -- warning signal
+- GE: beat earnings by 11.4% but stock reacted -8.2% -- warning signal
 
 ## Important Caveat
 > Druckenmiller noted in 2018 that algo trading has 'severely inhibited' his ability to read price signals. This skill is weighted at 15% in the synthesizer, lower than the other three, for this reason.

@@ -2,14 +2,19 @@
   "skill": "conviction-synthesizer",
   "version": "1.0.0",
   "date": "2026-11-20",
-  "conviction_score": 53.5,
+  "conviction_score": 53.0,
   "conviction_zone": "moderate",
   "equity_range": "50-69%",
   "action": "維持標準倉位。信號偏多但不夠清晰，等待更強的催化劑再加碼。",
-  "narrative": "流動性中性（53/100）——Fed 轉向跡象存在但尚未確認，等待更明確信號。 分析師正在上調盈利預期（60/100），這是 Druckenmiller 說的「conventional wisdom 尚未反映」的機會。",
+  "narrative": "流動性中性（53/100）——Fed 轉向跡象存在但尚未確認，等待更明確信號。 分析師正在上調盈利預期（60/100），這是 Druckenmiller 說的「conventional wisdom 尚未反映」的機會。 股價信號出現 4 個背離（盈利好但股價跌），Druckenmiller：「幾乎必然是六個月後的壞消息預警。」",
   "druck_quote": "When you don't see it, don't swing.",
   "blow_off_risk": false,
-  "notable_divergences": [],
+  "notable_divergences": [
+    "NVDA: beat earnings by 8.4% but stock reacted -6.5% -- warning signal",
+    "AMD: beat earnings by 7.4% but stock reacted -3.8% -- warning signal",
+    "COP: beat earnings by 7.3% but stock reacted -6.9% -- warning signal",
+    "GE: beat earnings by 11.4% but stock reacted -8.2% -- warning signal"
+  ],
   "components": {
     "liquidity-regime": {
       "score": 53.2,
@@ -30,7 +35,7 @@
       "stale": false
     },
     "price-signal": {
-      "score": 53.2,
+      "score": 50.0,
       "direction": "neutral",
       "weight": 0.15,
       "stale": false
