@@ -46,7 +46,7 @@ def fetch_price_data(ticker: str, days: int = LOOKBACK_DAYS + 10) -> pd.DataFram
         end   = datetime.today()
         start = end - timedelta(days=days)
         df = yf.download(ticker, start=start, end=end,
-                         progress=False, auto_adjust=True, session=_SESSION)
+                         progress=False, auto_adjust=True)
         return df
     except Exception as e:
         print(f"    Warning: {ticker} -- {e}")
@@ -60,7 +60,7 @@ def get_earnings_reaction(ticker: str) -> dict:
     Positive surprise but stock falls = bearish price signal (Druck's key tell).
     """
     try:
-        t    = yf.Ticker(ticker, session=_SESSION)
+        t    = yf.Ticker(ticker)
         hist = t.earnings_dates
 
         if hist is None or hist.empty:
@@ -79,7 +79,7 @@ def get_earnings_reaction(ticker: str) -> dict:
         earn_start = latest_date - timedelta(days=2)
         earn_end   = latest_date + timedelta(days=5)
         prices     = yf.download(ticker, start=earn_start, end=earn_end,
-                                  progress=False, auto_adjust=True, session=_SESSION)
+                                  progress=False, auto_adjust=True)
 
         if prices.empty or len(prices) < 3:
             return {"signal": "neutral", "reaction_pct": 0.0, "has_data": False}

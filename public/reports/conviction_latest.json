@@ -2,7 +2,7 @@
   "skill": "conviction-synthesizer",
   "version": "1.0.0",
   "date": "2026-11-20",
-  "conviction_score": 53.7,
+  "conviction_score": 53.5,
   "conviction_zone": "moderate",
   "equity_range": "50-69%",
   "action": "維持標準倉位。信號偏多但不夠清晰，等待更強的催化劑再加碼。",
@@ -24,13 +24,13 @@
       "stale": false
     },
     "market-breadth": {
-      "score": 50.0,
+      "score": 47.4,
       "direction": "neutral",
       "weight": 0.25,
       "stale": false
     },
     "price-signal": {
-      "score": 50.0,
+      "score": 53.2,
       "direction": "neutral",
       "weight": 0.15,
       "stale": false

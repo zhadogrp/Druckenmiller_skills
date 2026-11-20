@@ -36,19 +36,21 @@ jobs:
       - run: pip install -r requirements.txt
 
       # FRED_API_KEY is optional: without it the script uses FRED's keyless CSV endpoint.
+      # run_signal.py retries on Yahoo rate limits and drops placeholder output on failure,
+      # so the synthesizer falls back to the last good report (marked stale).
       - name: Run liquidity-regime
         continue-on-error: true
         env: { FRED_API_KEY: '${{ secrets.FRED_API_KEY }}' }
-        run: python liquidity-regime/scripts/liquidity_regime.py --output-dir public/reports/
+        run: python run_signal.py liquidity-regime/scripts/liquidity_regime.py liquidity_regime --output-dir public/reports/
       - name: Run forward-earnings
         continue-on-error: true
-        run: sleep 20 && python forward-earnings/scripts/forward_earnings.py --output-dir public/reports/
+        run: python run_signal.py forward-earnings/scripts/forward_earnings.py forward_earnings --output-dir public/reports/
       - name: Run market-breadth
         continue-on-error: true
-        run: sleep 20 && python market-breadth/scripts/market_breadth.py --output-dir public/reports/
+        run: sleep 30 && python run_signal.py market-breadth/scripts/market_breadth.py market_breadth --output-dir public/reports/
       - name: Run price-signal
         continue-on-error: true
-        run: sleep 20 && python price-signal/scripts/price_signal.py --output-dir public/reports/
+        run: sleep 30 && python run_signal.py price-signal/scripts/price_signal.py price_signal --output-dir public/reports/
       - name: Run conviction-synthesizer
         run: |
           python conviction-synthesizer/scripts/conviction_synthesizer.py \

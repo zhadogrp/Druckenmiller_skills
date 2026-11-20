@@ -2,40 +2,40 @@
   "skill": "price-signal",
   "version": "1.0.0",
   "date": "2026-11-20",
-  "overall_score": 50.0,
+  "overall_score": 53.2,
   "overall_direction": "neutral",
   "implication": "Mixed price signals. Some stocks acting well, others lagging. No clear divergence pattern. Treat as neutral input to synthesizer. Note: Druckenmiller acknowledged algo trading has reduced reliability of this signal in recent years.",
   "notable_divergences": [],
   "sector_results": {
     "Technology": {
-      "score": 50.0,
-      "direction": "neutral",
-      "bullish": 0,
-      "bearish": 0
+      "score": 74.0,
+      "direction": "bullish",
+      "bullish": 4,
+      "bearish": 1
     },
     "Financials": {
-      "score": 50.0,
-      "direction": "neutral",
+      "score": 18.0,
+      "direction": "bearish",
       "bullish": 0,
-      "bearish": 0
+      "bearish": 4
     },
     "Healthcare": {
-      "score": 50.0,
-      "direction": "neutral",
-      "bullish": 0,
-      "bearish": 0
+      "score": 66.0,
+      "direction": "bullish",
+      "bullish": 3,
+      "bearish": 1
     },
     "Energy": {
       "score": 50.0,
       "direction": "neutral",
-      "bullish": 0,
-      "bearish": 0
+      "bullish": 2,
+      "bearish": 2
     },
     "Industrials": {
-      "score": 50.0,
+      "score": 58.0,
       "direction": "neutral",
-      "bullish": 0,
-      "bearish": 0
+      "bullish": 2,
+      "bearish": 1
     }
   },
   "caveat": "Druckenmiller noted in 2018 that algo trading has 'severely inhibited' his ability to read price signals. This skill is weighted at 15% in the synthesizer, lower than the other three, for this reason.",

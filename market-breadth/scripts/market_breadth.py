@@ -52,7 +52,7 @@ def fetch_returns(ticker: str, days: int = LOOKBACK_DAYS) -> float | None:
     try:
         end   = datetime.today()
         start = end - timedelta(days=days + 10)  # buffer for weekends
-        df = yf.download(ticker, start=start, end=end, progress=False, auto_adjust=True, session=_SESSION)
+        df = yf.download(ticker, start=start, end=end, progress=False, auto_adjust=True)
         if df.empty or len(df) < 10:
             return None
         close = df["Close"].dropna()
@@ -70,7 +70,7 @@ def fetch_prices(ticker: str, days: int = LOOKBACK_DAYS) -> pd.Series:
     try:
         end   = datetime.today()
         start = end - timedelta(days=days + 10)
-        df = yf.download(ticker, start=start, end=end, progress=False, auto_adjust=True, session=_SESSION)
+        df = yf.download(ticker, start=start, end=end, progress=False, auto_adjust=True)
         if df.empty:
             return pd.Series(dtype=float)
         time.sleep(1.5)

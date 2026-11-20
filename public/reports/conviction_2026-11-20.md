@@ -1,7 +1,7 @@
 # Druckenmiller Conviction Briefing -- 2026-11-20
 
 ## 今日判斷
-**確信度**: 53.7 / 100  
+**確信度**: 53.5 / 100  
 **區間**: MODERATE  
 **建議倉位**: 50-69%
 
@@ -16,8 +16,8 @@
 |------|------|------|------|
 | liquidity-regime | 53.2 | neutral | 35% |
 | forward-earnings | 60.3 | beat | 25% |
-| market-breadth | 50.0 | neutral | 25% |
-| price-signal | 50.0 | neutral | 15% |
+| market-breadth | 47.4 | neutral | 25% |
+| price-signal | 53.2 | neutral | 15% |
 
 ## Druckenmiller 語錄
 > "When you don't see it, don't swing."

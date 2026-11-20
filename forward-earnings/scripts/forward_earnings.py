@@ -68,7 +68,7 @@ def get_ticker_forward_signal(ticker: str) -> dict:
     empty = {"direction": "neutral", "composite": 0.0,
              "revision_score": 0.0, "trend_score": 0.0, "next_year_growth": 0.0}
     try:
-        t = yf.Ticker(ticker, session=_SESSION)
+        t = yf.Ticker(ticker)
 
         # 1. EPS Revisions — up/down counts in last 30 days
         revision_score = 0.0
