@@ -6,10 +6,10 @@
   "overall_direction": "neutral",
   "implication": "Mixed price signals. Some stocks acting well, others lagging. No clear divergence pattern. Treat as neutral input to synthesizer. Note: Druckenmiller acknowledged algo trading has reduced reliability of this signal in recent years.",
   "notable_divergences": [
-    "NVDA: beat earnings by 8.4% but stock reacted -6.5% -- warning signal",
-    "AMD: beat earnings by 7.4% but stock reacted -3.8% -- warning signal",
-    "COP: beat earnings by 7.3% but stock reacted -6.9% -- warning signal",
-    "GE: beat earnings by 11.4% but stock reacted -8.2% -- warning signal"
+    "NVDA: beat earnings by 8.4% but stock reacted -6.1% -- warning signal",
+    "AMD: beat earnings by 7.4% but stock reacted -7.2% -- warning signal",
+    "CVX: beat earnings by 8.5% but stock reacted -7.9% -- warning signal",
+    "GE: beat earnings by 11.4% but stock reacted -4.8% -- warning signal"
   ],
   "sector_results": {
     "Technology": {
@@ -19,10 +19,10 @@
       "bearish": 1
     },
     "Financials": {
-      "score": 26.0,
+      "score": 34.0,
       "direction": "bearish",
       "bullish": 1,
-      "bearish": 4
+      "bearish": 3
     },
     "Healthcare": {
       "score": 74.0,
@@ -31,10 +31,10 @@
       "bearish": 0
     },
     "Energy": {
-      "score": 50.0,
+      "score": 42.0,
       "direction": "neutral",
       "bullish": 1,
-      "bearish": 1
+      "bearish": 2
     },
     "Industrials": {
       "score": 50.0,

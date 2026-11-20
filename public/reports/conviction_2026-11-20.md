@@ -12,10 +12,10 @@
 流動性中性（53/100）——Fed 轉向跡象存在但尚未確認，等待更明確信號。 分析師正在上調盈利預期（60/100），這是 Druckenmiller 說的「conventional wisdom 尚未反映」的機會。 股價信號出現 4 個背離（盈利好但股價跌），Druckenmiller：「幾乎必然是六個月後的壞消息預警。」
 
 ## 價格背離警告 (Druckenmiller Signal)
-- NVDA: beat earnings by 8.4% but stock reacted -6.5% -- warning signal
-- AMD: beat earnings by 7.4% but stock reacted -3.8% -- warning signal
-- COP: beat earnings by 7.3% but stock reacted -6.9% -- warning signal
-- GE: beat earnings by 11.4% but stock reacted -8.2% -- warning signal
+- NVDA: beat earnings by 8.4% but stock reacted -6.1% -- warning signal
+- AMD: beat earnings by 7.4% but stock reacted -7.2% -- warning signal
+- CVX: beat earnings by 8.5% but stock reacted -7.9% -- warning signal
+- GE: beat earnings by 11.4% but stock reacted -4.8% -- warning signal
 
 ## 四大信號明細
 | 信號 | 分數 | 方向 | 權重 |

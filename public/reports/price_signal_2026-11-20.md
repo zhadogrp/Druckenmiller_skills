@@ -10,17 +10,17 @@ Mixed price signals. Some stocks acting well, others lagging. No clear divergenc
 | Sector | Score | Direction | Bullish | Bearish |
 |--------|-------|-----------|---------|---------|
 | Technology | 50.0 | neutral | 1 | 1 |
-| Financials | 26.0 | bearish | 1 | 4 |
+| Financials | 34.0 | bearish | 1 | 3 |
 | Healthcare | 74.0 | bullish | 3 | 0 |
-| Energy | 50.0 | neutral | 1 | 1 |
+| Energy | 42.0 | neutral | 1 | 2 |
 | Industrials | 50.0 | neutral | 2 | 2 |
 
 ## Notable Divergences (watch carefully)
 
-- NVDA: beat earnings by 8.4% but stock reacted -6.5% -- warning signal
-- AMD: beat earnings by 7.4% but stock reacted -3.8% -- warning signal
-- COP: beat earnings by 7.3% but stock reacted -6.9% -- warning signal
-- GE: beat earnings by 11.4% but stock reacted -8.2% -- warning signal
+- NVDA: beat earnings by 8.4% but stock reacted -6.1% -- warning signal
+- AMD: beat earnings by 7.4% but stock reacted -7.2% -- warning signal
+- CVX: beat earnings by 8.5% but stock reacted -7.9% -- warning signal
+- GE: beat earnings by 11.4% but stock reacted -4.8% -- warning signal
 
 ## Important Caveat
 > Druckenmiller noted in 2018 that algo trading has 'severely inhibited' his ability to read price signals. This skill is weighted at 15% in the synthesizer, lower than the other three, for this reason.
