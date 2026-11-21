@@ -2,41 +2,41 @@
   "skill": "market-breadth",
   "version": "1.1.0",
   "date": "2026-11-20",
-  "composite_score": 47.4,
+  "composite_score": 48.5,
   "health": "neutral",
   "blow_off_risk": false,
   "blow_off_warning": "",
   "implication": "Mixed breadth. Some sectors leading, others lagging. No clear blow-off pattern but not broad-based either. Use liquidity and earnings signals as primary conviction drivers.",
   "components": {
     "ew_vs_cw": {
-      "score": 67.4,
+      "score": 74.4,
       "direction": "healthy",
-      "ew_3m_pct": -3.91,
-      "cw_3m_pct": -7.39,
-      "divergence": 3.48
+      "ew_3m_pct": -6.51,
+      "cw_3m_pct": -11.39,
+      "divergence": 4.88
     },
     "small_vs_large": {
-      "score": 28.4,
+      "score": 33.5,
       "direction": "concentrated",
-      "small_3m_pct": -12.49,
-      "large_3m_pct": -7.1,
-      "divergence": -5.39
+      "small_3m_pct": -15.23,
+      "large_3m_pct": -11.1,
+      "divergence": -4.13
     },
     "sector_breadth": {
-      "score": 33.3,
+      "score": 22.2,
       "direction": "concentrated",
-      "positive_sectors": 3,
-      "negative_sectors": 6,
+      "positive_sectors": 2,
+      "negative_sectors": 7,
       "sector_returns": {
-        "Technology": -14.82,
-        "Financials": -3.7,
-        "Healthcare": 5.76,
-        "Energy": 0.36,
-        "Industrials": -12.96,
-        "Consumer Dis": -1.49,
-        "Staples": 6.31,
-        "Materials": -5.58,
-        "Utilities": -1.17
+        "Technology": -21.8,
+        "Financials": -6.0,
+        "Healthcare": 5.66,
+        "Energy": -0.31,
+        "Industrials": -15.61,
+        "Consumer Dis": -4.85,
+        "Staples": 5.88,
+        "Materials": -7.16,
+        "Utilities": -2.35
       }
     }
   },

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "date": "2026-11-20",
   "regime": "neutral",
-  "strength": 53.2,
+  "strength": 53.9,
   "components": {
     "balance_sheet_trend": {
       "score": 50.0,
@@ -18,8 +18,8 @@
       "direction": "expanding"
     },
     "yield_curve": {
-      "score": 50.0,
-      "direction": "neutral"
+      "score": 54.35,
+      "direction": "expanding"
     }
   },
   "implication": "Mixed signals. Preserve capital. Wait for clearer regime.",

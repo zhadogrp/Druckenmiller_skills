@@ -12,13 +12,13 @@ Analyst EPS revisions (30d) + EPS trend vs 30d ago + next-year growth estimate
 ## Sector Ranking (forward EPS revision momentum)
 | Rank | Sector | Score | Direction | Up revised | Next-yr growth |
 |------|--------|-------|-----------|------------|----------------|
-| 1 | Technology | 76.0 | up | 9/10 | +39.7% |
+| 1 | Technology | 76.0 | up | 9/10 | +39.6% |
 | 2 | Industrials | 67.0 | up | 6/6 | +12.5% |
 | 3 | Financials | 66.6 | up | 6/6 | +11.4% |
-| 4 | Consumer Discret. | 62.6 | up | 4/4 | +11.4% |
+| 4 | Consumer Discret. | 62.5 | up | 4/4 | +11.3% |
 | 5 | Healthcare | 60.6 | up | 3/3 | +11.4% |
 | 6 | Materials | 60.0 | up | 4/5 | +10.1% |
-| 7 | Utilities | 57.2 | neutral | 2/2 | +7.9% |
+| 7 | Utilities | 57.1 | neutral | 2/2 | +7.8% |
 | 8 | Consumer Staples | 56.6 | neutral | 2/2 | +6.5% |
 | 9 | Energy | 36.2 | down | 2/10 | -4.5% |
 

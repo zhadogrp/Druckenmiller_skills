@@ -1,7 +1,7 @@
 # Market Breadth -- 2026-11-20
 
 **Health**: `NEUTRAL`
-**Score**: 47.4 / 100
+**Score**: 48.5 / 100
 
 ## Implication
 Mixed breadth. Some sectors leading, others lagging. No clear blow-off pattern but not broad-based either. Use liquidity and earnings signals as primary conviction drivers.
@@ -9,27 +9,27 @@ Mixed breadth. Some sectors leading, others lagging. No clear blow-off pattern b
 ## Component Scores
 | Component | Score | Signal |
 |-----------|-------|--------|
-| EW vs CW (mega-cap concentration) | 67.4 | healthy |
-| Small vs Large cap | 28.4 | concentrated |
-| Sector breadth | 33.3 | concentrated |
+| EW vs CW (mega-cap concentration) | 74.4 | healthy |
+| Small vs Large cap | 33.5 | concentrated |
+| Sector breadth | 22.2 | concentrated |
 
 ## Detail
-- Equal-weight (RSP) 3M: -3.9% | Cap-weight (SPY) 3M: -7.4% | Divergence: +3.5%
-- Russell 2000 3M: -12.5% | S&P 500 3M: -7.1%
-- Sectors positive: 3/9
+- Equal-weight (RSP) 3M: -6.5% | Cap-weight (SPY) 3M: -11.4% | Divergence: +4.9%
+- Russell 2000 3M: -15.2% | S&P 500 3M: -11.1%
+- Sectors positive: 2/9
 
 ## Sector Returns (3M)
 | Sector | Return |
 |--------|--------|
-| Staples | +6.3% |
-| Healthcare | +5.8% |
-| Energy | +0.4% |
-| Utilities | -1.2% |
-| Consumer Dis | -1.5% |
-| Financials | -3.7% |
-| Materials | -5.6% |
-| Industrials | -13.0% |
-| Technology | -14.8% |
+| Staples | +5.9% |
+| Healthcare | +5.7% |
+| Energy | -0.3% |
+| Utilities | -2.4% |
+| Consumer Dis | -4.8% |
+| Financials | -6.0% |
+| Materials | -7.2% |
+| Industrials | -15.6% |
+| Technology | -21.8% |
 
 ## Druckenmiller Principle
 > "My technical analysis showed that the breadth wasn't there --

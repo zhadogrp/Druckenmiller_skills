@@ -17,7 +17,7 @@ Mixed price signals. Some stocks acting well, others lagging. No clear divergenc
 
 ## Notable Divergences (watch carefully)
 
-- NVDA: beat earnings by 8.4% but stock reacted -6.1% -- warning signal
+- NVDA: beat earnings by 8.4% but stock reacted -19.2% -- warning signal
 - AMD: beat earnings by 7.4% but stock reacted -7.2% -- warning signal
 - CVX: beat earnings by 8.5% but stock reacted -7.9% -- warning signal
 - GE: beat earnings by 11.4% but stock reacted -4.8% -- warning signal

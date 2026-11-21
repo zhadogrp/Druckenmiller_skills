@@ -12,7 +12,7 @@
       "up_revised": 9,
       "down_revised": 1,
       "avg_revision_score": 0.0,
-      "avg_next_yr_growth": 39.7
+      "avg_next_yr_growth": 39.6
     },
     "Financials": {
       "score": 66.6,
@@ -47,12 +47,12 @@
       "avg_next_yr_growth": 12.5
     },
     "Consumer Discret.": {
-      "score": 62.6,
+      "score": 62.5,
       "direction": "up",
       "up_revised": 4,
       "down_revised": 0,
       "avg_revision_score": 0.0,
-      "avg_next_yr_growth": 11.4
+      "avg_next_yr_growth": 11.3
     },
     "Consumer Staples": {
       "score": 56.6,
@@ -71,12 +71,12 @@
       "avg_next_yr_growth": 10.1
     },
     "Utilities": {
-      "score": 57.2,
+      "score": 57.1,
       "direction": "neutral",
       "up_revised": 2,
       "down_revised": 0,
       "avg_revision_score": 0.0,
-      "avg_next_yr_growth": 7.9
+      "avg_next_yr_growth": 7.8
     }
   },
   "sector_ranking": [
@@ -87,7 +87,7 @@
       "up_revised": 9,
       "down_revised": 1,
       "avg_revision_score": 0.0,
-      "avg_next_yr_growth": 39.7
+      "avg_next_yr_growth": 39.6
     },
     {
       "sector": "Industrials",
@@ -109,12 +109,12 @@
     },
     {
       "sector": "Consumer Discret.",
-      "score": 62.6,
+      "score": 62.5,
       "direction": "up",
       "up_revised": 4,
       "down_revised": 0,
       "avg_revision_score": 0.0,
-      "avg_next_yr_growth": 11.4
+      "avg_next_yr_growth": 11.3
     },
     {
       "sector": "Healthcare",
@@ -136,12 +136,12 @@
     },
     {
       "sector": "Utilities",
-      "score": 57.2,
+      "score": 57.1,
       "direction": "neutral",
       "up_revised": 2,
       "down_revised": 0,
       "avg_revision_score": 0.0,
-      "avg_next_yr_growth": 7.9
+      "avg_next_yr_growth": 7.8
     },
     {
       "sector": "Consumer Staples",
