@@ -1,7 +1,7 @@
 # Druckenmiller Conviction Briefing -- 2026-11-24
 
 ## 今日判斷
-**確信度**: 52.8 / 100  
+**確信度**: 53.4 / 100  
 **區間**: MODERATE  
 **建議倉位**: 50-69%
 
@@ -20,9 +20,9 @@
 ## 四大信號明細
 | 信號 | 分數 | 方向 | 權重 |
 |------|------|------|------|
-| liquidity-regime | 53.9 | neutral | 35% |
-| forward-earnings | 60.3 | beat | 25% |
-| market-breadth | 46.3 | neutral | 25% |
+| liquidity-regime | 53.5 | neutral | 35% |
+| forward-earnings | 60.2 | beat | 25% |
+| market-breadth | 49.4 | neutral | 25% |
 | price-signal | 48.4 | neutral | 15% |
 
 ## Druckenmiller 語錄

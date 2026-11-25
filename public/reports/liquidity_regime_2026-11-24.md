@@ -1,7 +1,7 @@
 # Liquidity Regime — 2026-11-24
 
 **Regime**: `NEUTRAL`  
-**Strength**: 53.9 / 100
+**Strength**: 53.5 / 100
 
 ## Implication
 Mixed signals. Preserve capital. Wait for clearer regime.
@@ -11,8 +11,8 @@ Mixed signals. Preserve capital. Wait for clearer regime.
 |-----------|-------|-----------|
 | balance_sheet_trend | 50.0 | neutral |
 | rate_direction | 50.0 | neutral |
-| m2_growth | 66.1 | expanding |
-| yield_curve | 54.4 | expanding |
+| m2_growth | 67.3 | expanding |
+| yield_curve | 50.0 | neutral |
 
 ## Druckenmiller Principle
 > 'Earnings don't move the overall market; it's the Federal Reserve Board.

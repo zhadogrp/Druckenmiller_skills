@@ -1,7 +1,7 @@
 # Forward Earnings Analysis -- 2026-11-24
 
 **Overall**: `BEAT`
-**Score**: 60.3 / 100
+**Score**: 60.2 / 100
 
 ## Implication
 Analysts broadly revising EPS estimates upward. Consensus becoming more optimistic -- the setup Druckenmiller calls 'how you make money': seeing what conventional wisdom has not yet priced in.
@@ -15,12 +15,12 @@ Analyst EPS revisions (30d) + EPS trend vs 30d ago + next-year growth estimate
 | 1 | Technology | 76.0 | up | 9/10 | +39.5% |
 | 2 | Industrials | 67.0 | up | 6/6 | +12.5% |
 | 3 | Financials | 66.6 | up | 6/6 | +11.4% |
-| 4 | Consumer Discret. | 62.5 | up | 4/4 | +11.3% |
+| 4 | Consumer Discret. | 62.5 | up | 4/4 | +11.1% |
 | 5 | Healthcare | 60.6 | up | 3/3 | +11.4% |
-| 6 | Materials | 59.9 | up | 4/5 | +9.8% |
+| 6 | Materials | 59.9 | up | 4/5 | +9.7% |
 | 7 | Utilities | 57.1 | neutral | 2/2 | +7.8% |
 | 8 | Consumer Staples | 56.6 | neutral | 2/2 | +6.5% |
-| 9 | Energy | 36.0 | down | 2/10 | -5.0% |
+| 9 | Energy | 35.9 | down | 2/10 | -5.2% |
 
 ## Druckenmiller Principle
 > "What a company's been earning doesn't mean anything.
