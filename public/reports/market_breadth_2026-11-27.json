@@ -1,0 +1,44 @@
+{
+  "skill": "market-breadth",
+  "version": "1.1.0",
+  "date": "2026-11-27",
+  "composite_score": 57.2,
+  "health": "neutral",
+  "blow_off_risk": false,
+  "blow_off_warning": "",
+  "implication": "Mixed breadth. Some sectors leading, others lagging. No clear blow-off pattern but not broad-based either. Use liquidity and earnings signals as primary conviction drivers.",
+  "components": {
+    "ew_vs_cw": {
+      "score": 70.0,
+      "direction": "healthy",
+      "ew_3m_pct": -0.49,
+      "cw_3m_pct": -4.5,
+      "divergence": 4.01
+    },
+    "small_vs_large": {
+      "score": 35.9,
+      "direction": "concentrated",
+      "small_3m_pct": -7.78,
+      "large_3m_pct": -4.26,
+      "divergence": -3.52
+    },
+    "sector_breadth": {
+      "score": 55.6,
+      "direction": "neutral",
+      "positive_sectors": 5,
+      "negative_sectors": 4,
+      "sector_returns": {
+        "Technology": -12.43,
+        "Financials": 0.72,
+        "Healthcare": 7.26,
+        "Energy": -2.69,
+        "Industrials": -7.66,
+        "Consumer Dis": 3.05,
+        "Staples": 9.34,
+        "Materials": -0.06,
+        "Utilities": 0.64
+      }
+    }
+  },
+  "source": "Yahoo Finance via yfinance (free)"
+}
